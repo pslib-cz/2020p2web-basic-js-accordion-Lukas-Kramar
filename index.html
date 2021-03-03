@@ -214,6 +214,32 @@
 
         </main>
 
+        <script>
+            let kolekce = document.getElementsByClassName("vypujcka-item");
+            for (let element of kolekce)
+            {    
+                funkce(element);
+
+                element.getElementsByTagName("input")[0].onclick = (e) => {   
+                    funkce(element);
+            }
+        }
+
+
+        //FUNKCE-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            function funkce(element)
+            {
+                if(element.getElementsByTagName("input")[0].checked)
+                {                    
+                    element.getElementsByClassName("detail-vypujcky-container")[0].style.height = element.getElementsByClassName("detail-vypujcky-container")[0].scrollHeight + "px";
+                }
+                else
+                {                    
+                    element.getElementsByClassName("detail-vypujcky-container")[0].style.height = "0px";
+                }
+            }
+        </script>
+
         <footer class="main-footer-layout main-footer">
             <div class="main-footer-container-layout">
                 <p class="footer-text">© Aplikace pro správu vybavení školního ateliéru</p>
